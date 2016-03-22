@@ -12,6 +12,7 @@
  * Finally, please indicate approximately how many hours you spent on this:
  * #hours:
  * 	Vagan: 1
+		Areesha: 1
  */
 
 #include "triangles.h" // import the prototypes for our triangle class.
@@ -43,6 +44,12 @@ void triangle::print() {
 
 bool congruent(triangle t1, triangle t2) {
 	// TODO: write this function.
+	unsigned long sides1[3] = {t1.s1, t1.s2, t1.s3};
+	sort(sides1, sides1 + 3);
+	unsigned long sides2[3] = {t2.s1, t2.s2, t2.s3};
+	sort(sides2, sides2 + 3);
+	if(sides1[0] == sides2[0] && sides1[1] == sides2[1] && sides1[2] == sides2[2])
+		return true;
 	return false;
 }
 
