@@ -16,6 +16,7 @@
  * 	Vagan: 1
 		Areesha: 1
 		Jedidah: 1
+		Haresh:1
  */
 
 #include "triangles.h" // import the prototypes for our triangle class.
@@ -74,6 +75,40 @@ vector<triangle> findRightTriangles(unsigned long l, unsigned long h) {
 	// TODO: find all the right triangles with integer sides,
 	// subject to the perimeter bigger than l and less than h
 	vector<triangle> retval; // storage for return value.
+	vector<unsigned long> a;
+	vector<unsigned long> b;
+	vector<unsigned long> c;
+	for(unsigned int i = 1; i < h; i++)
+	{
+		for(unsigned int j = 1; j < h; j++)
+		{
+			double hyp = sqrt(i*i + j*j);
+			if(hyp == (int)hyp)
+			{
+				if(i >= j)
+				{
+					a.push_back(i);
+					b.push_back(j);
+					c.push_back((int)hyp);
+				}
+			}
+		}
+	}
+	/*
+	if(a.size() != b.size() || a.size() != c.size())
+		cout << "Fatal error has occured." << endl;
+	*/
+	for(unsigned int i = 0; i < c.size(); i++)
+	{
+		unsigned long p = a[i] + b[i] + c[i];
+		if(p >= l && p <= h)
+		{
+			triangle t;
+			t.s1 = a[i];
+			t.s2 = b[i];
+			t.s3 = c[i];
+			retval.push_back(t);
+		}
+	}
 	return retval;
 }
-
