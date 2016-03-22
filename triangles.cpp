@@ -7,7 +7,9 @@
  * NOT mean it is okay to COPY THAT SOURCE.  What you submit here **MUST BE
  * YOUR OWN WORK**.
  * References:
- *
+ * https://confluence.atlassian.com/.../basic-git-commands-77663...
+ * http://www.cplusplus.com/reference/vector/vector/
+ * http://www.cplusplus.com/reference/cmath/
  *
  * Finally, please indicate approximately how many hours you spent on this:
  * #hours:
