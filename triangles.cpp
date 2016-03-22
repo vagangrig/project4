@@ -13,6 +13,7 @@
  * #hours:
  * 	Vagan: 1
 		Areesha: 1
+		Jedidah: 1
  */
 
 #include "triangles.h" // import the prototypes for our triangle class.
@@ -55,6 +56,15 @@ bool congruent(triangle t1, triangle t2) {
 
 bool similar(triangle t1, triangle t2) {
 	// TODO: write this function.
+	unsigned long sides1[3] = {t1.s1, t1.s2, t1.s3};
+	sort(sides1, sides1 + 3);
+	unsigned long sides2[3] = {t2.s1, t2.s2, t2.s3};
+	sort(sides2, sides2 + 3);
+	double c1 = (double)sides1[0] / (double)sides2[0];
+	double c2 = (double)sides1[1] / (double)sides2[1];
+	double c3 = (double)sides1[2] / (double)sides2[2];
+	if(c1 == c2 && c2 == c3)
+		return true;
 	return false;
 }
 
