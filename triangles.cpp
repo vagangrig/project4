@@ -10,16 +10,16 @@
  *
  *
  * Finally, please indicate approximately how many hours you spent on this:
- * #hours: 
+ * #hours:
+ * 	Vagan: 1
  */
 
 #include "triangles.h" // import the prototypes for our triangle class.
 #include <iostream>
-using std::cout;
 #include <vector>
-using std::vector;
 #include <algorithm>
-using std::sort;
+#include <math.h>
+using namespace std;
 
 // note the "triangle::" part.  We need to specify the function's
 // FULL name to avoid confusion.  Else, the compiler will think we
@@ -32,7 +32,9 @@ unsigned long triangle::area() {
 	// TODO: write this function.
 	// Note: why is it okay to return an integer here?  Recall that
 	// all of our triangles have integer sides, and are right triangles...
-	return 0;
+	unsigned long sides[3] = {s1, s2, s3};
+	sort(sides, sides + 3);
+	return (sides[0] * sides[1]) / 2;
 }
 
 void triangle::print() {
